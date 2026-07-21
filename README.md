@@ -1,7 +1,5 @@
 # Robot Policy Evidence Contracts
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21481254.svg)](https://doi.org/10.5281/zenodo.21481254)
-
 Public companion materials for the manuscript **“Evidence Sufficiency for AI-Based Robot Policy Evaluation: From Physics Simulators to Learned World Models.”**
 
 The project develops a claim–contract–witness framework for assessing what physics simulators, reconstructed digital twins, and learned world models can support when they are used to evaluate, rank, select, optimize, or safety-screen robot policies.
@@ -48,4 +46,4 @@ Internal review release. No journal submission or acceptance is implied.
 
 ## License
 
-The scholarly content and PNG/SVG figures are licensed under [CC BY-NC-ND 4.0](LICENSE-CONTENT.md). The figure-generation code is [all rights reserved](LICENSE-CODE.md). See [LICENSE.md](LICENSE.md) for the exact file allocation and historical-release terms.
+The scholarly content and PNG/SVG figures are licensed under [CC BY-NC-ND 4.0](LICENSE-CONTENT.md). The figure-generation code is licensed under the [MIT License](LICENSE-CODE.md). See [LICENSE.md](LICENSE.md) for the exact file allocation and historical-release terms.

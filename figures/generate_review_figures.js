@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: LicenseRef-All-Rights-Reserved
+// SPDX-License-Identifier: MIT
 // Copyright (c) 2026 Yuan Liao and contributors
 
 const fs = require('fs');
