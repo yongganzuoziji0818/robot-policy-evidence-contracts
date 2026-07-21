@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: "If you use these materials, please cite the repository and the associated manuscript."
+title: "Robot Policy Evidence Contracts"
+type: software
+version: 0.1.0
+date-released: 2026-07-22
+authors:
+  - given-names: Yuan
+    family-names: Liao
+    orcid: "https://orcid.org/0009-0007-6991-9049"
+  - given-names: Hui
+    family-names: Liu
+  - given-names: Jiliang
+    family-names: Tu
+  - given-names: Jing
+    family-names: Jiang
+  - given-names: Zaihong
+    family-names: Wan
+  - given-names: Jianbo
+    family-names: Gao
+  - given-names: Ting
+    family-names: Fang
+  - given-names: Zhiwei
+    family-names: Hu
+repository-code: "https://github.com/yongganzuoziji0818/robot-policy-evidence-contracts"
