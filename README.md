@@ -34,3 +34,6 @@ Yuan Liao, Hui Liu, Jiliang Tu, Jing Jiang, Zaihong Wan, Jianbo Gao, Ting Fang, 
 
 Internal review release. No journal submission or acceptance is implied.
 
+## License
+
+The manuscript, review protocol, evidence matrix, claim map, and figure files are licensed under [CC BY 4.0](LICENSE-CONTENT.md). The figure-generation source code is licensed under the [MIT License](LICENSE-CODE.md). See [LICENSE.md](LICENSE.md) for the file-level allocation.

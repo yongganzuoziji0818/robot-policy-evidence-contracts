@@ -4,22 +4,39 @@ title: "Robot Policy Evidence Contracts"
 type: software
 version: 0.1.0
 date-released: 2026-07-22
+abstract: "A structured critical review, evidence ledger, claim-contract-witness framework, and reproducible conceptual figures for evaluating the evidentiary sufficiency of physics simulators, digital twins, and learned world models used in robot-policy decisions."
+license: CC-BY-4.0
+keywords:
+  - artificial intelligence
+  - robot policy evaluation
+  - learned world models
+  - simulation validation
+  - evidence sufficiency
+  - policy selection
 authors:
   - given-names: Yuan
     family-names: Liao
+    affiliation: "School of Information Engineering, Nanchang Hangkong University"
     orcid: "https://orcid.org/0009-0007-6991-9049"
   - given-names: Hui
     family-names: Liu
+    affiliation: "School of Information Engineering, Nanchang Hangkong University"
   - given-names: Jiliang
     family-names: Tu
+    affiliation: "School of Information Engineering, Nanchang Hangkong University"
   - given-names: Jing
     family-names: Jiang
+    affiliation: "School of Information Engineering, Nanchang Hangkong University"
   - given-names: Zaihong
     family-names: Wan
+    affiliation: "School of Information Engineering, Nanchang Hangkong University"
   - given-names: Jianbo
     family-names: Gao
+    affiliation: "School of Information Engineering, Nanchang Hangkong University"
   - given-names: Ting
     family-names: Fang
+    affiliation: "School of Information Engineering, Nanchang Hangkong University"
   - given-names: Zhiwei
     family-names: Hu
+    affiliation: "School of Information Engineering, Nanchang Hangkong University"
 repository-code: "https://github.com/yongganzuoziji0818/robot-policy-evidence-contracts"
