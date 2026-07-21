@@ -288,7 +288,7 @@ Yuan Liao: Conceptualization, Methodology, Software, Writing - original draft, W
 
 ### Data, materials, and code availability
 
-No new experimental dataset was generated or analyzed for this review. The review protocol, evidence ledger, claim map, and deterministic source files for the conceptual figures are publicly available in the [GitHub repository](https://github.com/yongganzuoziji0818/robot-policy-evidence-contracts). Release v0.1.0 is permanently archived on Zenodo under the version DOI [10.5281/zenodo.21477786](https://doi.org/10.5281/zenodo.21477786); the concept DOI [10.5281/zenodo.21477785](https://doi.org/10.5281/zenodo.21477785) resolves to all versions.
+No new experimental dataset was generated or analyzed for this review. The review protocol, evidence ledger, claim map, and deterministic source files for the conceptual figures are publicly available in the [GitHub repository](https://github.com/yongganzuoziji0818/robot-policy-evidence-contracts). Release v0.3.0 is permanently archived on Zenodo under the version DOI [10.5281/zenodo.21481254](https://doi.org/10.5281/zenodo.21481254); the concept DOI [10.5281/zenodo.21477785](https://doi.org/10.5281/zenodo.21477785) resolves to all versions.
 
 ### Ethics approval and consent to participate
 
