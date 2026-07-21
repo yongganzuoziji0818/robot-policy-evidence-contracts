@@ -2,11 +2,9 @@ cff-version: 1.2.0
 message: "If you use these materials, please cite the repository and the associated manuscript."
 title: "Robot Policy Evidence Contracts"
 type: software
-version: 0.1.0
+version: 0.2.0
 date-released: 2026-07-22
-doi: "10.5281/zenodo.21477786"
 abstract: "A structured critical review, evidence ledger, claim-contract-witness framework, and reproducible conceptual figures for evaluating the evidentiary sufficiency of physics simulators, digital twins, and learned world models used in robot-policy decisions."
-license: CC-BY-4.0
 keywords:
   - artificial intelligence
   - robot policy evaluation
@@ -41,4 +39,3 @@ authors:
     family-names: Hu
     affiliation: "School of Information Engineering, Nanchang Hangkong University"
 repository-code: "https://github.com/yongganzuoziji0818/robot-policy-evidence-contracts"
-url: "https://doi.org/10.5281/zenodo.21477786"

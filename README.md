@@ -1,7 +1,5 @@
 # Robot Policy Evidence Contracts
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21477786.svg)](https://doi.org/10.5281/zenodo.21477786)
-
 Public companion materials for the manuscript **“Evidence Sufficiency for AI-Based Robot Policy Evaluation: From Physics Simulators to Learned World Models.”**
 
 The project develops a claim–contract–witness framework for assessing what physics simulators, reconstructed digital twins, and learned world models can support when they are used to evaluate, rank, select, optimize, or safety-screen robot policies.
@@ -36,12 +34,12 @@ Yuan Liao, Hui Liu, Jiliang Tu, Jing Jiang, Zaihong Wan, Jianbo Gao, Ting Fang, 
 
 Internal review release. No journal submission or acceptance is implied.
 
-## Archival release
+## Historical archival release
 
 - GitHub release: [v0.1.0](https://github.com/yongganzuoziji0818/robot-policy-evidence-contracts/releases/tag/v0.1.0)
 - Version DOI: [10.5281/zenodo.21477786](https://doi.org/10.5281/zenodo.21477786)
-- Concept DOI (all versions): [10.5281/zenodo.21477785](https://doi.org/10.5281/zenodo.21477785)
+- Concept DOI: [10.5281/zenodo.21477785](https://doi.org/10.5281/zenodo.21477785)
 
 ## License
 
-The manuscript, review protocol, evidence matrix, claim map, and figure files are licensed under [CC BY 4.0](LICENSE-CONTENT.md). The figure-generation source code is licensed under the [MIT License](LICENSE-CODE.md). See [LICENSE.md](LICENSE.md) for the file-level allocation.
+Copyright (c) 2026 Yuan Liao and the listed authors. **All rights reserved.** See [LICENSE.md](LICENSE.md). This status applies from version 0.2.0 onward and does not revoke the licenses already granted for the historical v0.1.0 release.
