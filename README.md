@@ -34,12 +34,14 @@ Yuan Liao, Hui Liu, Jiliang Tu, Jing Jiang, Zaihong Wan, Jianbo Gao, Ting Fang, 
 
 Internal review release. No journal submission or acceptance is implied.
 
-## Historical archival release
+## Archival history
 
 - GitHub release: [v0.1.0](https://github.com/yongganzuoziji0818/robot-policy-evidence-contracts/releases/tag/v0.1.0)
 - Version DOI: [10.5281/zenodo.21477786](https://doi.org/10.5281/zenodo.21477786)
+- GitHub release: [v0.2.0](https://github.com/yongganzuoziji0818/robot-policy-evidence-contracts/releases/tag/v0.2.0)
+- Version DOI: [10.5281/zenodo.21481189](https://doi.org/10.5281/zenodo.21481189)
 - Concept DOI: [10.5281/zenodo.21477785](https://doi.org/10.5281/zenodo.21477785)
 
 ## License
 
-Copyright (c) 2026 Yuan Liao and the listed authors. **All rights reserved.** See [LICENSE.md](LICENSE.md). This status applies from version 0.2.0 onward and does not revoke the licenses already granted for the historical v0.1.0 release.
+The scholarly content and PNG/SVG figures are licensed under [CC BY-NC-ND 4.0](LICENSE-CONTENT.md). The figure-generation code is [all rights reserved](LICENSE-CODE.md). See [LICENSE.md](LICENSE.md) for the exact file allocation and historical-release terms.
