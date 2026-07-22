@@ -20,6 +20,22 @@ This repository contains a structured critical review and theoretical framework.
 
 ## Reproducibility
 
+The repository now also includes a dependency-free Python reference package:
+
+- `src/robot_policy_evidence_contracts/` provides finite-sample risk bounds, margin-aware ranking certificates, and SHA-256 artifact checks;
+- `tests/` checks fail-closed behavior and certificate logic;
+- `examples/` contains synthetic, non-empirical demonstrations.
+
+Install and verify it with Python 3.10 or newer:
+
+```powershell
+python -m pip install -e .
+python -m unittest discover -s tests -v
+python examples/audit_fixed_policy_set.py
+```
+
+The package contains no robot-training runner, private dataset, checkpoint, P5 empirical output, or execution-authorization manifest. Its numerical checks illustrate selected K1, K5, and K6 obligations. They do not establish target-domain transport, intervention fidelity, protection against adaptive policy generation, or empirical superiority.
+
 The conceptual figures can be regenerated with Node.js:
 
 ```powershell

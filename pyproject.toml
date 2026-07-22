@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "robot-policy-evidence-contracts"
+version = "0.5.0.dev0"
+description = "Dependency-free reference utilities for robot-policy evidence contracts"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {file = "LICENSE-CODE.md"}
+authors = [{name = "Yuan Liao and contributors"}]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
