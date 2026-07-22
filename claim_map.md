@@ -1,6 +1,6 @@
 # Claim–contract–witness map for simulator/world-model robot-policy evaluation
 
-**Version:** 0.1  
+**Version:** 0.2 (public-literature update 2026-07-22)
 **Status:** conceptual synthesis; no empirical validation claimed.
 
 ## 1. Formal object
@@ -109,11 +109,11 @@ If each policy-value discrepancy between evaluator and target is bounded by \(\d
 
 | Manuscript claim | Current evidence | Status | Required closure before submission |
 |---|---|---|---|
-| simulator/world-model evaluation is a rapidly growing alternative to real-robot testing | SIMPLER, WorldEval, WorldGym, PolaRiS, RobotArena, Gemini/Veo | supported for trend, not universal effectiveness | full-text coding and archival-status update |
+| simulator/world-model evaluation is a rapidly growing alternative to real-robot testing | SIMPLER, WorldEval, WorldGym, PolaRiS, RobotArena, Gemini/Veo, RoboWorld, PlayWorld, GigaWorld-1 | supported for trend, not universal effectiveness; three July-update preprints are metadata/abstract coded only | full-text coding and archival-status update |
 | visual/predictive fidelity and downstream decision fidelity are distinct | Lambert et al.; Grimm et al.; world-model action/OOD findings | supported | cite primary sources and retain bounded wording |
 | policy ranking is weaker than policy selection/optimization | adaptive data analysis, uniform OPE, SPOTA/model exploitation | supported as a theoretical synthesis | formalize Proposition 2 and distinguish fixed versus adaptive policy sets |
 | credibility must be tied to a context of use and consequence | ASME V&V 40 and model-discrepancy literature | supported outside robotics | justify transfer of the principle, not direct empirical effectiveness in robotics |
-| numerical/execution semantics are an overlooked evidence layer in robot-policy evaluator papers | FMI/co-simulation sources plus preliminary coding | inferred, not yet systematically established | code reporting frequency in the included direct evaluator corpus |
+| numerical/execution semantics are an overlooked evidence layer in robot-policy evaluator papers | FMI/co-simulation sources, NIST robot-workcell digital-twin methods, plus preliminary coding | inferred, not yet systematically established | code reporting frequency in the included direct evaluator corpus |
 | the seven-contract framework is useful for authors/reviewers | conceptual design only | needs evidence; cannot be written as validated | present as proposed synthesis and invite prospective validation |
 | no prior review unifies these domains in this exact way | preliminary search only | not yet supported | complete database and citation-chaining novelty audit; avoid `first` |
 
@@ -131,4 +131,3 @@ Every future evaluator paper should report at minimum:
 8. uncertainty intervals matched to ranking/selection multiplicity;
 9. failure cases capable of reversing conclusions, not only degrading visuals;
 10. claim-specific conclusion that does not exceed the evidence tier.
-

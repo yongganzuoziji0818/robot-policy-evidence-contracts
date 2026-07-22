@@ -1,6 +1,6 @@
 # Initial literature matrix: simulator/world-model evidence for robot-policy evaluation
 
-**Version:** 0.1, search cutoff 2026-07-21  
+**Version:** 0.2, search cutoff 2026-07-22
 **Status:** active public-literature audit  
 **Interpretation:** `verified` means that title, year, and identifier were checked against an official proceedings page, DOI landing page, standard page, OpenReview, or arXiv record. It does not mean that full-text extraction is complete.
 
@@ -20,6 +20,9 @@
 | R10 | Badithela et al., [Reliably Augmenting Real-World Tests with Simulation for Scalable Robot Policy Evaluation](https://openreview.net/forum?id=x2u6sU04GZ), SAFE-ROL 2025 | hybrid real/simulation inference | non-asymptotic confidence intervals combining real and simulation evidence | directly targets finite-sample real performance inference | workshop record; assumptions and dependence structure require full-text extraction | E2, verified |
 | R11 | Gemini Robotics Team, [Evaluating Gemini Robotics Policies in a Veo World Simulator](https://veo-robotics.github.io/), arXiv:2512.10675, 2025 | video world simulator; ID/OOD ranking and safety red teaming | 1,600+ real evaluations, eight checkpoints, five tasks, paired rank/degradation analyses | strong current example of policy-in-the-loop world-model evaluation | project/preprint route; closed source and narrow policy provenance may limit independence | E1/E4, official project page and arXiv identifier verified |
 | R12 | Runway Robotics, [Accelerating Robot Policy Evaluation with General World Models](https://runwayml.com/research/accelerating-robot-policy-evaluation), 2026 | general world model; policy ranking | eight policies, 1,450 simulated rollouts, human progress ratings, Pearson/MMRV | current industrial evidence of rank agreement | corporate grey literature; no independent peer review; claim limited to ranking and tested embodiment/tasks | E4, verified grey literature |
+| R13 | Jeon et al., [RoboWorld: Fast and Reliable Neural Simulators for Generalist Robot Policy Evaluation](https://arxiv.org/abs/2607.01060), 2026, v4 | autoregressive video world model plus task-progress-aware VLM scorer; policy ranking | abstract reports long-horizon Step Forcing and paired real-world alignment, Pearson *r*=0.989 and Spearman *rho*=0.970 | current evidence that action-conditioned rollout design and task-progress scoring can support high rank agreement on a tested scope | preprint and abstract-level coding only; high correlation does not establish absolute calibration, post-selection validity, or transport to unseen policy families | E3, official arXiv metadata/abstract verified |
+| R14 | Yin et al., [PlayWorld: Learning Robot World Models from Autonomous Play](https://arxiv.org/abs/2603.09030), 2026, v3 | self-play-trained action-conditioned video world model; failure prediction, policy evaluation, and model-based policy improvement | abstract reports contact-rich self-play data, policy-evaluation improvements, and real-world deployment gains | highlights training-data support and long-tailed contact coverage as evaluator-relevant properties | simulator training, evaluation, and policy optimization share a data-generating pipeline; independence, denominators, and target-data reuse require full-text coding | E3, official arXiv metadata/abstract verified |
+| R15 | GigaWorld Team et al., [GigaWorld-1: A Roadmap to Build World Models for Robot Policy Evaluation](https://arxiv.org/abs/2607.02642), 2026, v1 | WMBench and evaluator-oriented world model; policy evaluation across architectures, action encodings, horizons, and metrics | abstract reports seven video world models, four action representations, more than 324,000 simulated rollouts paired with real executions, plus controlled design comparisons | directly strengthens the case that action fidelity, long-horizon consistency, memory, metric choice, and post-training are components of evaluator identity | preprint and abstract-level coding only; scale does not by itself establish independent transport, calibration, post-selection control, or safety validity | E3, official arXiv metadata/abstract verified |
 
 ## B. Direct methodological predecessors and current reviews
 
@@ -30,6 +33,8 @@
 | M03 | Yang et al., [The Reality Gap in Robotics: Challenges, Solutions, and Best Practices](https://www.annualreviews.org/content/journals/10.1146/annurev-control-031924-100130), Annual Review of Control, Robotics, and Autonomous Systems, 2026 | survey of reality-gap causes, solutions, metrics, and practice | establishes mature sim-to-real background | our review is not another transfer-technique survey; it evaluates evidence claims | E4, verified journal page |
 | M04 | ASME, [V&V 40-2018](https://www.asme.org/codes-standards/find-codes-standards/assessing-credibility-of-computational-modeling-through-verification-and-validation-application-to-medical-devices) | credibility should be commensurate with model reliance, context of use, and decision consequence | foundational claim-relative credibility principle | medical-device examples do not directly specify robot-policy ranking/selection witnesses | E4 standard, verified |
 | M05 | FMI, [Functional Mock-up Interface Specification](https://fmi-standard.org/docs/main/) | interfaces and execution responsibilities for model exchange, co-simulation, and scheduled execution | shows that execution semantics are part of evaluator identity | specification compliance alone does not establish target-domain policy validity | E4 standard, verified |
+| M06 | Kibira et al., [Towards a Digital Twin of a Robot Workcell: Standards and Methods](https://www.nist.gov/publications/towards-digital-twin-robot-workcell-standards-and-methods), *Simulation*, 2024, DOI 10.1177/00375497241290242 | standards and methods for constructing an interoperable robot-workcell digital twin | anchors asset identity, interfaces, data exchange, and validation practice in an official NIST record | digital-twin interoperability and construction discipline do not establish policy-ranking validity | E2/E4, NIST metadata verified; full-text coding pending |
+| M07 | Atreya et al., [RoboArena: Distributed Real-World Evaluation of Generalist Robot Policies](https://proceedings.mlr.press/v305/atreya25a.html), CoRL/PMLR 2025 | distributed, double-blind, pairwise real-world policy evaluation across seven institutions | supplies a real-world reference design for heterogeneous tasks, environments, evaluators, and policy rankings | clarifies that target-domain ranking itself has evaluator, aggregation, and transport structure; it is not evidence for surrogate sufficiency | E1 context, archival PMLR metadata/abstract verified |
 
 ## C. Decision-aware models, exploitation, and model adequacy
 
@@ -81,6 +86,8 @@ The manuscript should therefore organize the field by **evaluation claim and mis
 
 Before submission, the following must be completed:
 
+- the original backlog below is extended through R15 and M07; R13--R15 and M06--M07 require PDF-level extraction in addition to metadata/abstract verification;
+
 - full-text coding of R01–R11 and M01–M05 using the extraction schema in the protocol;
 - verify archival status and final author lists for R03–R07 and R11;
 - extract exact policy/task/trial counts and uncertainty procedures rather than relying on abstracts/project pages;
@@ -88,3 +95,14 @@ Before submission, the following must be completed:
 - check citation chaining for value-aware model learning and simulator validation in robotics;
 - perform retraction/expression-of-concern screening and DOI metadata normalization;
 - add a transparent flow count for records identified, screened, excluded, and retained.
+
+## H. Targeted update log
+
+**Update date:** 2026-07-22
+
+**Sources checked:** official arXiv records, PMLR proceedings, and the NIST publication record.
+
+**Query clusters:** `robot policy evaluation world model`; `neural simulator robot policy ranking`; `digital twin robot policy evaluation`; `distributed real-world robot policy evaluation`; and 2025--2026 forward searches from the direct-evaluator set.
+
+**Disposition:** six candidate records were inspected; five were retained (R13--R15, M06--M07). One real-world evaluation-automation candidate was not added to the core because it did not evaluate a surrogate environment and contributed no distinct transport or execution claim beyond M07. No duplicate was added.
+**Verification level:** title, author list, version/year, identifier, venue or record type, and abstract/landing-page claims were checked against the official pages. The update is documented but not closed: PDF-level extraction, citation chaining, retraction/status screening, and independent author review remain pending.

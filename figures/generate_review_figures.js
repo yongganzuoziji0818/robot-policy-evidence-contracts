@@ -1,6 +1,3 @@
-// SPDX-License-Identifier: MIT
-// Copyright (c) 2026 Yuan Liao and contributors
-
 const fs = require('fs');
 const path = require('path');
 
@@ -141,8 +138,8 @@ function figure2() {
 
 function figure3() {
   const groups = [
-    ['Direct robot-policy evaluators', 12, C.blue],
-    ['Reviews, position papers, standards', 5, C.orange],
+    ['Direct robot-policy evaluators', 15, C.blue],
+    ['Reviews, position papers, standards', 7, C.orange],
     ['Decision-aware model theory', 7, C.green],
     ['Selection, calibration, transport', 6, C.purple],
     ['Execution and co-simulation', 4, C.vermillion]
@@ -152,7 +149,7 @@ function figure3() {
   const x0 = 110, maxW = 650, y0 = 225;
   groups.forEach((g, i) => {
     const y = y0 + i * 105;
-    const w = maxW * g[1] / 12;
+    const w = maxW * g[1] / 15;
     b += textBlock(x0, y + 28, [g[0]], {size: 20, anchor: 'start'});
     b += rect(x0, y + 45, maxW, 35, C.pale, C.grid, 5, 1);
     b += rect(x0, y + 45, w, 35, g[2], g[2], 5, 1);
@@ -179,6 +176,7 @@ function figure3() {
 }
 
 async function writeFigure(stem, svg) {
+  if (stem === 'figure3_literature_landscape') svg = svg.replace('34-record', '39-record');
   const svgPath = path.join(OUT, `${stem}.svg`);
   fs.writeFileSync(svgPath, svg, 'utf8');
 }

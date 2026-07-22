@@ -3,7 +3,6 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
-from itertools import combinations
 from typing import Mapping
 
 
@@ -56,16 +55,3 @@ def certify_ranking(
         required = float(error_bounds[higher]) + float(error_bounds[lower])
         pairs.append(PairCertificate(higher, lower, gap, required, gap > required))
     return RankingCertificate(ordered, tuple(pairs))
-
-
-def all_pairwise_certificates(
-    estimates: Mapping[str, float], error_bounds: Mapping[str, float]
-) -> tuple[PairCertificate, ...]:
-    """Return certificates for every pair, not only adjacent ranks."""
-    ranking = certify_ranking(estimates, error_bounds)
-    result: list[PairCertificate] = []
-    for higher, lower in combinations(ranking.ordered_policies, 2):
-        gap = float(estimates[higher]) - float(estimates[lower])
-        required = float(error_bounds[higher]) + float(error_bounds[lower])
-        result.append(PairCertificate(higher, lower, gap, required, gap > required))
-    return tuple(result)
