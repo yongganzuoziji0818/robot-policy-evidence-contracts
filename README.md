@@ -20,6 +20,8 @@ This repository contains a structured critical review and theoretical framework.
 
 ## Reproducibility
 
+Publication figures use canonical journal file names. `figures/Fig1.eps` through `figures/Fig3.eps` are the vector submission files; matching SVG and PNG versions support inspection and manuscript rendering. Visible figure titles are kept in the manuscript captions rather than duplicated inside the artwork.
+
 The repository now also includes a dependency-free Python reference package:
 
 - `src/robot_policy_evidence_contracts/` provides finite-sample risk bounds, margin-aware ranking certificates, and SHA-256 artifact checks;

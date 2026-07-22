@@ -89,7 +89,7 @@ This manuscript is a structured critical review, not a systematic review or meta
 
 The present coding was developed as part of the same synthesis that produced the seven contracts, so framework construction and literature appraisal are not independent. The manuscript therefore cannot estimate how reliably independent reviewers would apply K1–K7 or whether the contracts predict evaluator failure. Publication and language bias are also possible because the working corpus emphasizes English-language sources available through major robotics, machine-learning and simulation venues. These limitations are addressed in the research agenda through preregistered coding, independent raters and prospective outcome-blinded validation; they are not resolved by the current review.
 
-![Figure 3. Literature landscape of the structured review.](figures/figure3_literature_landscape.png)
+![Figure 3. Literature landscape of the structured review.](figures/Fig3.svg)
 
 *Figure 3. Literature landscape of the structured review. (A) Composition of the purposive 39-record corpus after the 22 July targeted update. Counts describe source groups, not study quality or K1–K7 reporting frequency. (B) Direct evaluator studies, context sources, formal and methodological work, and execution evidence contribute different roles to the claim-relative synthesis.*
 
@@ -135,7 +135,7 @@ The literature synthesis yields seven contracts between a decision claim and the
 
 **K7, transport and context of use**, asks why evaluator-supported conclusions should hold for the named robot, task distribution, environment, horizon, and consequence. Paired target trials provide a direct but bounded anchor. Discrepancy models, shift assumptions, embodiment restrictions, and acceptance limits can extend the argument, but internal simulator consistency cannot replace it. Together, K1–K7 transform the broad question “Is the simulator realistic?” into seven falsifiable questions tied to a decision.
 
-![Figure 1. Claim–contract–witness architecture.](figures/figure1_claim_contract_witness.png)
+![Figure 1. Claim–contract–witness architecture.](figures/Fig1.png)
 
 *Figure 1. Claim–contract–witness architecture. Decision claims C0–C5 are linked to seven evidence obligations and representative witnesses. The claim ladder is only partially ordered: contracts are claim-dependent rather than mapped one-to-one to levels, and correct ranking does not imply calibrated value or target-domain transport.*
 
@@ -183,7 +183,7 @@ Three records retained in the 22 July update sharpen this interpretation without
 
 The appropriate comparison is therefore contract coverage, not evaluator category. A physics simulator may have stronger K1 evidence and weaker K7 evidence; a digital twin may strengthen a local K7 anchor but leave policy-class transport unresolved; a learned world model may broaden visual support while leaving K2 and K3 uncertain. A defensible review should preserve these profiles rather than treating one architecture as inherently closer to deployment validity.
 
-![Figure 2. Proxy insufficiency map.](figures/figure2_proxy_insufficiency.png)
+![Figure 2. Proxy insufficiency map.](figures/Fig2.png)
 
 *Figure 2. Proxy insufficiency map. Each row connects a commonly reported proxy to a counterexample mechanism, the first missing contract, and the strongest narrower claim that remains defensible. The map does not dismiss proxy metrics; it prevents them from silently supporting a stronger decision claim.*
 

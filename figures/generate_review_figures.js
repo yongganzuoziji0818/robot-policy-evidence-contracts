@@ -3,7 +3,7 @@ const path = require('path');
 
 const OUT = __dirname;
 const W = 1800;
-const H = 1100;
+const H = 1000;
 const C = {
   ink: '#1F2933', muted: '#52606D', grid: '#CBD5E1', paper: '#FFFFFF',
   blue: '#0072B2', sky: '#56B4E9', green: '#009E73', orange: '#E69F00',
@@ -45,12 +45,13 @@ function arrow(x1, y1, x2, y2, color = C.muted, dash = '') {
 }
 
 function shell(title, subtitle, body) {
-  return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">
+  const compact = title.startsWith('Figure 1');
+  const height = compact ? 900 : H;
+  const shift = compact ? 135 : 90;
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${height}" viewBox="0 0 ${W} ${height}">
   <defs><marker id="arrow" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="${C.muted}"/></marker></defs>
-  <rect width="${W}" height="${H}" fill="${C.paper}"/>
-  ${textBlock(70, 70, [title], {size: 39, weight: 700, anchor: 'start'})}
-  ${textBlock(70, 112, [subtitle], {size: 23, fill: C.muted, anchor: 'start'})}
-  ${body}
+  <rect width="${W}" height="${height}" fill="${C.paper}"/>
+  <g transform="translate(0 -${shift})">${body}</g>
   </svg>`;
 }
 
@@ -171,19 +172,18 @@ function figure3() {
   });
   b += rect(90, 900, 1620, 110, C.pale, C.grid, 14, 2);
   b += textBlock(120, 942, ['Reading boundary'], {size: 23, weight: 700, anchor: 'start'});
-  b += textBlock(120, 978, ['Counts describe the purposive 34-record review corpus, not study quality or K1–K7 reporting frequency. Evidence classes remain distinct in the ledger.'], {size: 21, anchor: 'start', maxChars: 125});
+  b += textBlock(120, 978, ['Counts describe the purposive 39-record review corpus, not study quality or K1–K7 reporting frequency. Evidence classes remain distinct in the ledger.'], {size: 21, anchor: 'start', maxChars: 125});
   return shell('Figure 3 | Literature landscape of the structured review', 'The corpus combines direct evaluator evidence with theory, statistics, validation, and execution semantics.', b);
 }
 
 async function writeFigure(stem, svg) {
-  if (stem === 'figure3_literature_landscape') svg = svg.replace('34-record', '39-record');
   const svgPath = path.join(OUT, `${stem}.svg`);
   fs.writeFileSync(svgPath, svg, 'utf8');
 }
 
 (async () => {
-  await writeFigure('figure1_claim_contract_witness', figure1());
-  await writeFigure('figure2_proxy_insufficiency', figure2());
-  await writeFigure('figure3_literature_landscape', figure3());
-  console.log('Generated 3 publication-vector SVG figures.');
+  await writeFigure('Fig1', figure1());
+  await writeFigure('Fig2', figure2());
+  await writeFigure('Fig3', figure3());
+  console.log('Generated Fig1.svg, Fig2.svg, and Fig3.svg without visible titles.');
 })().catch(err => { console.error(err); process.exit(1); });
