@@ -91,7 +91,7 @@ The present coding was developed as part of the same synthesis that produced the
 
 ![Figure 3. Literature landscape of the structured review.](figures/figure3_literature_landscape.png)
 
-*Figure 3. Literature landscape of the structured review. (A) Composition of the purposive 39-record corpus after the 22 July targeted update. Counts describe source groups, not study quality or K1–K7 reporting frequency. (B) Direct evaluator studies, context sources, formal and methodological work, and execution evidence contribute different roles to the claim-relative synthesis. Vector source: `figures/figure3_literature_landscape.svg`.*
+*Figure 3. Literature landscape of the structured review. (A) Composition of the purposive 39-record corpus after the 22 July targeted update. Counts describe source groups, not study quality or K1–K7 reporting frequency. (B) Direct evaluator studies, context sources, formal and methodological work, and execution evidence contribute different roles to the claim-relative synthesis.*
 
 ## 3. From evaluator scores to evaluation claims
 
@@ -99,18 +99,13 @@ The present coding was developed as part of the same synthesis that produced the
 
 The statement that an evaluator is “valid” is incomplete unless the intended inference is named. We represent an evaluation claim as
 
-\[
-\mathcal C=(\mathcal E,\Pi,\mathcal Z,q,L,\epsilon,\alpha,D),
-\]
+**C = (E, Π, Z, q, L, ε, α, D),**
 
-where \(\mathcal E\) is the evaluator, \(\Pi\) is the prespecified policy set or class, \(\mathcal Z\) is the target context distribution, \(q\) is the quantity of interest, \(L\) is the loss caused by a wrong evaluator-supported decision, \(\epsilon\) is the tolerated loss, \(\alpha\) is the tolerated error probability, and \(D\) is the downstream decision. Two studies that use the same simulator can therefore make materially different claims: estimating the mean success of one frozen policy is not equivalent to selecting the best of hundreds of checkpoints, and neither is equivalent to screening rare safety failures.
+where E is the evaluator, Π is the prespecified policy set or class, Z is the target context distribution, q is the quantity of interest, L is the loss caused by a wrong evaluator-supported decision, ε is the tolerated loss, α is the tolerated error probability, and D is the downstream decision. Two studies that use the same simulator can therefore make materially different claims: estimating the mean success of one frozen policy is not equivalent to selecting the best of hundreds of checkpoints, and neither is equivalent to screening rare safety failures.
 
-This representation follows the context-of-use principle in computational-model credibility while specializing it to policy decisions. Let \(E\) denote the available evidence and \(\mathfrak W(E)\) the evaluator–target mechanisms that are not ruled out by that evidence. Evidence is decision-sufficient for \(\mathcal C\) only if its assumptions and witnesses constrain the remaining mechanisms enough that
+This representation follows the context-of-use principle in computational-model credibility while specializing it to policy decisions. Let E denote the available evidence and W(E) the evaluator–target mechanisms that are not ruled out by that evidence. Evidence is decision-sufficient for C only if its assumptions and witnesses constrain the remaining mechanisms enough that
 
-\[
-\sup_{W\in\mathfrak W(E)}
-\Pr_W\!\left[L(D_E,D_\star)>\epsilon\right]\leq\alpha.
-\]
+**sup\_{W ∈ W(E)} Pr\_W[L(D\_E, D*) > ε] ≤ α.**
 
 This expression is an organizing definition rather than a universal certificate. It requires an evaluator study to state what decision is being supported, what error matters, which mechanisms remain compatible with the evidence, and which assumptions close the gap. Its practical consequence is that evidence sufficiency cannot be read from a single fidelity score.
 
@@ -142,7 +137,7 @@ The literature synthesis yields seven contracts between a decision claim and the
 
 ![Figure 1. Claim–contract–witness architecture.](figures/figure1_claim_contract_witness.png)
 
-*Figure 1. Claim–contract–witness architecture. Decision claims C0–C5 are linked to seven evidence obligations and representative witnesses. The claim ladder is only partially ordered: contracts are claim-dependent rather than mapped one-to-one to levels, and correct ranking does not imply calibrated value or target-domain transport. Vector source: `figures/figure1_claim_contract_witness.svg`.*
+*Figure 1. Claim–contract–witness architecture. Decision claims C0–C5 are linked to seven evidence obligations and representative witnesses. The claim ladder is only partially ordered: contracts are claim-dependent rather than mapped one-to-one to levels, and correct ranking does not imply calibrated value or target-domain transport.*
 
 ## 4. What common evidence can—and cannot—establish
 
@@ -150,7 +145,7 @@ The literature synthesis yields seven contracts between a decision claim and the
 
 Visual and predictive metrics are attractive because they can be computed without repeated robot trials. They are also indispensable for diagnosing rendering errors, object persistence, camera mismatch, and short-horizon dynamics. The inferential problem begins when these metrics are treated as substitutes for policy outcomes. A perceptually small error concentrated at contact, grasp closure, collision, or task termination can have a large effect on return, while visually conspicuous background error may have little effect on a robust policy. Objective mismatch is therefore structural rather than merely a need for better image metrics.
 
-An elementary counterexample makes the limit explicit. Suppose a behavior policy never takes action \(a_1\). Two processes can then match every logged observation and reward yet assign opposite consequences to \(a_1\). A model with perfect observational fit under the behavior policy cannot determine which intervention policy is better. This construction underlies Proposition 1 and shows why artifact-level evidence must be connected to action interventions, support, and the downstream outcome before it supports C1–C5.
+An elementary counterexample makes the limit explicit. Suppose a behavior policy never takes action a₁. Two processes can then match every logged observation and reward yet assign opposite consequences to a₁. A model with perfect observational fit under the behavior policy cannot determine which intervention policy is better. This construction underlies Proposition 1 and shows why artifact-level evidence must be connected to action interventions, support, and the downstream outcome before it supports C1–C5.
 
 ### 4.2 Action following and closed-loop intervention
 
@@ -162,11 +157,11 @@ Open-loop action replay and closed-loop policy evaluation nevertheless answer di
 
 Ranking is often the practical objective because researchers need to compare policies or choose checkpoints even when absolute synthetic success rates are biased. SIMPLER evaluates real–sim agreement using correlation and mean maximum rank violation, which weights an incorrect order by the corresponding real-world performance margin ([Li et al., 2025](https://proceedings.mlr.press/v270/li25c.html)). This is more decision-relevant than a visual metric and less sensitive than correlation to negligible differences between nearly tied policies.
 
-No aggregate rank statistic removes the need for uncertainty and margin analysis. If evaluator values differ from target values by at most \(\delta\) for each policy, an evaluator gap greater than \(2\delta\) certifies the pairwise order. When the gap is at most \(2\delta\), admissible errors can create a tie or reversal. Proposition 4 formalizes this elementary result. In finite samples, \(\delta\) must include uncertainty in both the synthetic and target estimates, and simultaneous coverage is needed for all pairs used by a selection rule. A high correlation across many easy-to-order policies can otherwise obscure one consequential reversal near the top of the ranking.
+No aggregate rank statistic removes the need for uncertainty and margin analysis. If evaluator values differ from target values by at most δ for each policy, an evaluator gap greater than 2δ certifies the pairwise order. When the gap is at most 2δ, admissible errors can create a tie or reversal. Proposition 4 formalizes this elementary result. In finite samples, δ must include uncertainty in both the synthetic and target estimates, and simultaneous coverage is needed for all pairs used by a selection rule. A high correlation across many easy-to-order policies can otherwise obscure one consequential reversal near the top of the ranking.
 
 ### 4.4 Selection and optimization
 
-Selection changes the estimand. A validation study may establish perfect agreement on a frozen set \(\Pi_0\), yet a newly generated policy outside that set can receive an optimistic evaluator value and a poor target value. Proposition 2 constructs exactly this case. The conclusion is not that finite-set validation is weak; it is that its policy-class boundary must remain visible.
+Selection changes the estimand. A validation study may establish perfect agreement on a frozen set Π₀, yet a newly generated policy outside that set can receive an optimistic evaluator value and a poor target value. Proposition 2 constructs exactly this case. The conclusion is not that finite-set validation is weak; it is that its policy-class boundary must remain visible.
 
 Repeated use of an evaluator intensifies the problem. Adaptive data analysis shows that a reused holdout can be overfit, while uniform off-policy evaluation distinguishes fixed-policy accuracy from guarantees for a data-dependent choice ([Dwork et al., 2015](https://proceedings.neurips.cc/paper_files/paper/2015/hash/bad5f33780c42f2588878a9d07405083-Abstract.html); [Yin et al., 2021](https://proceedings.mlr.press/v130/yin21a.html)). In robotics, simulation optimization bias describes how policy search can exploit modeling error rather than merely suffer from it ([Muratore et al., 2018](https://proceedings.mlr.press/v87/muratore18a.html)). Pessimistic model-based methods respond by penalizing uncertain or unsupported behavior, illustrating a broader principle: uncertainty must alter the selection rule, not appear only as a diagnostic plot.
 
@@ -190,7 +185,7 @@ The appropriate comparison is therefore contract coverage, not evaluator categor
 
 ![Figure 2. Proxy insufficiency map.](figures/figure2_proxy_insufficiency.png)
 
-*Figure 2. Proxy insufficiency map. Each row connects a commonly reported proxy to a counterexample mechanism, the first missing contract, and the strongest narrower claim that remains defensible. The map does not dismiss proxy metrics; it prevents them from silently supporting a stronger decision claim. Vector source: `figures/figure2_proxy_insufficiency.svg`.*
+*Figure 2. Proxy insufficiency map. Each row connects a commonly reported proxy to a counterexample mechanism, the first missing contract, and the strongest narrower claim that remains defensible. The map does not dismiss proxy metrics; it prevents them from silently supporting a stronger decision claim.*
 
 ## 5. The neglected layer: execution identity and numerical semantics
 
@@ -206,7 +201,7 @@ Execution identity also includes stochastic semantics. Parallel environments can
 
 The minimum evidence is claim-dependent. For C1, an implementation record should make the estimator and rollout population reproducible. For C2 and C3, perturbation tests should ask whether plausible execution choices change a consequential order or the selected policy. For C4, the evaluator version and stochastic protocol should remain stable across the optimization loop, or version changes should be treated as changes to the objective. For C5, rare-event conclusions should include event-localization and stopping-rule sensitivity because a missed transition can erase the hazard being estimated. These checks do not certify the target domain; they establish that the synthetic evidence has a stable computational meaning.
 
-This distinction suggests an execution envelope rather than a binary reproducibility flag. Let each admissible implementation choice produce an evaluator value \(\hat V_e(\pi)\). The range over prespecified solver, scheduler, seed-mapping, and stopping choices is an implementation-induced uncertainty component. If that component exceeds a policy-value margin, the ranking is not resolved by the evaluator implementation even before target discrepancy is considered. Conservation residuals or coupling-error indicators can help localize the cause, but examples from co-simulation show that satisfying one invariant does not guarantee correct system-level behavior ([Sadjina et al., 2017](https://doi.org/10.1007/s00366-016-0492-8); [Chen et al., 2021](https://doi.org/10.1007/s11044-021-09785-x)).
+This distinction suggests an execution envelope rather than a binary reproducibility flag. Let each admissible implementation choice produce an evaluator value V̂ₑ(π). The range over prespecified solver, scheduler, seed-mapping, and stopping choices is an implementation-induced uncertainty component. If that component exceeds a policy-value margin, the ranking is not resolved by the evaluator implementation even before target discrepancy is considered. Conservation residuals or coupling-error indicators can help localize the cause, but examples from co-simulation show that satisfying one invariant does not guarantee correct system-level behavior ([Sadjina et al., 2017](https://doi.org/10.1007/s00366-016-0492-8); [Chen et al., 2021](https://doi.org/10.1007/s11044-021-09785-x)).
 
 ## 6. A minimum reporting package
 
@@ -317,6 +312,68 @@ OpenAI Codex was used to assist with organizing research records, preparing init
 
 The authors have declared that there are no additional acknowledgements.
 
-## Evidence and reference status
+## References
 
-All live citations in this internal-review draft link to a primary or official source represented in the current 39-record evidence ledger. Preprints, standards, project pages, workshop records, and corporate reports retain their evidence class in that ledger. *Artificial Intelligence Review* uses author-year citations and an alphabetized reference list with DOI links where available; conversion of the working hyperlinks into that final reference format requires author-level full-text verification and occurs only after the expanded ledger is closed. The verified source ledger is maintained in `P5_SIM_WORLD_MODEL_EVIDENCE_LITERATURE_MATRIX_2026-07-21.md`.
+Abou-Chakra J et al (2025) Real-is-Sim: A real-to-sim-to-real dynamic digital twin for robot policy evaluation. arXiv:2504.03597. https://doi.org/10.48550/arXiv.2504.03597
+
+ASME (2018) Assessing credibility of computational modeling through verification and validation: application to medical devices. ASME V&V 40-2018, American Society of Mechanical Engineers. https://www.asme.org/codes-standards/find-codes-standards/assessing-credibility-of-computational-modeling-through-verification-and-validation-application-to-medical-devices
+
+Atreya P, Pertsch K, Lee T, Kim MJ et al (2025) RoboArena: distributed real-world evaluation of generalist robot policies. Proc Mach Learn Res 305:336–364. https://proceedings.mlr.press/v305/atreya25a.html
+
+Chen X et al (2021) Explicit parallel co-simulation approach. Multibody Syst Dyn. https://doi.org/10.1007/s11044-021-09785-x
+
+Cremona F, Lohstroh M, Broman D, Lee EA, Masin M, Tripakis S (2019) Hybrid co-simulation: it’s about time. Softw Syst Model 18:1655–1679. https://doi.org/10.1007/s10270-017-0633-6
+
+Dwork C, Feldman V, Hardt M, Pitassi T, Reingold O, Roth A (2015) Generalization in adaptive data analysis and holdout reuse. Adv Neural Inf Process Syst 28. https://proceedings.neurips.cc/paper_files/paper/2015/hash/bad5f33780c42f2588878a9d07405083-Abstract.html
+
+Gemini Robotics Team (2025) Evaluating Gemini Robotics policies in a Veo world simulator. arXiv:2512.10675. https://veo-robotics.github.io/
+
+GigaWorld Team, Ma A, Wang B, Li B et al (2026) GigaWorld-1: a roadmap to build world models for robot policy evaluation. arXiv:2607.02642. https://doi.org/10.48550/arXiv.2607.02642
+
+Grimm C, Barreto A, Singh S, Silver D (2020) The value equivalence principle for model-based reinforcement learning. Adv Neural Inf Process Syst 33. https://papers.nips.cc/paper/2020/hash/3bb585ea00014b0e3ebe4c6dd165a358-Abstract.html
+
+Hansen AH et al (2022) The FMI 3.0 standard interface for clocked and scheduled simulations. Electronics 11:3635. https://doi.org/10.3390/electronics11213635
+
+Hou X et al (2026) World model for robot learning: a comprehensive survey. arXiv:2605.00080. https://doi.org/10.48550/arXiv.2605.00080
+
+Jangir R et al (2026) RobotArena Infinity. International Conference on Learning Representations. https://openreview.net/forum?id=OutljIofvS
+
+Jeon B, Ye S, Doo JH, Kim S, Seo M, Son H, Lee K (2026) RoboWorld: fast and reliable neural simulators for generalist robot policy evaluation. arXiv:2607.01060. https://doi.org/10.48550/arXiv.2607.01060
+
+Kennedy MC, O’Hagan A (2001) Bayesian calibration of computer models. J R Stat Soc Ser B 63:425–464. https://doi.org/10.1111/1467-9868.00294
+
+Khan S et al (2024) Off-policy evaluation beyond overlap. Proc Mach Learn Res 235. https://proceedings.mlr.press/v235/khan24b.html
+
+Kibira D, Shao G, Venkatesh S (2024) Towards a digital twin of a robot workcell: standards and methods. Simulation. https://doi.org/10.1177/00375497241290242
+
+Kidambi R, Rajeswaran A, Netrapalli P, Joachims T (2020) MOReL: model-based offline reinforcement learning. Adv Neural Inf Process Syst 33. https://proceedings.neurips.cc/paper/2020/hash/f7efa4f864ae9b88d43527f4b14f750f-Abstract.html
+
+Lambert N, Amos B, Yadan O, Calandra R (2020) Objective mismatch in model-based reinforcement learning. Proc Mach Learn Res 120:761–770. https://proceedings.mlr.press/v120/lambert20a.html
+
+Li X et al (2025) Evaluating real-world robot manipulation policies in simulation. Proc Mach Learn Res 270. https://proceedings.mlr.press/v270/li25c.html
+
+Muratore F, Treede F, Gienger M, Peters J (2018) Domain randomization for simulation-based policy optimization with transferability assessment. Proc Mach Learn Res 87:700–713. https://proceedings.mlr.press/v87/muratore18a.html
+
+Oliver TA, Terejanu G, Simmons CS, Moser RD (2015) Validating predictions of unobserved quantities. Comput Methods Appl Mech Eng 283:1310–1335. https://doi.org/10.1016/j.cma.2014.08.023
+
+PolaRiS Team (2025) Scalable real-to-sim evaluations for generalist robot policies. arXiv:2512.16881. https://doi.org/10.48550/arXiv.2512.16881
+
+Quevedo F et al (2025) WorldGym: world model as an environment for policy evaluation. arXiv:2506.00613. https://doi.org/10.48550/arXiv.2506.00613
+
+Runway Robotics (2026) Accelerating robot policy evaluation with general world models. https://runwayml.com/research/accelerating-robot-policy-evaluation. Accessed 22 July 2026
+
+Sadjina S, Pedersen E, Kyllingstad LT, Skjong S (2017) Energy conservation and power bonds in co-simulations: non-iterative adaptive step size control and error estimation. Eng Comput 33:607–620. https://doi.org/10.1007/s00366-016-0492-8
+
+Sun H et al (2024) Constrained reinforcement learning under model mismatch. Proc Mach Learn Res 235. https://proceedings.mlr.press/v235/sun24d.html
+
+WorldEval Team (2025) WorldEval: world model as real-world robot policies evaluator. arXiv:2505.19017. https://doi.org/10.48550/arXiv.2505.19017
+
+Yang Y et al (2026) The reality gap in robotics: challenges, solutions, and best practices. Annu Rev Control Robot Auton Syst. https://doi.org/10.1146/annurev-control-031924-100130
+
+Yin M, Bai Y, Wang Y (2021) Near-optimal provable uniform convergence in off-policy evaluation for a finite policy class. Proc Mach Learn Res 130:3913–3921. https://proceedings.mlr.press/v130/yin21a.html
+
+Yin T, Mei Z, Zheng Z, Yamane M et al (2026) PlayWorld: learning robot world models from autonomous play. arXiv:2603.09030. https://doi.org/10.48550/arXiv.2603.09030
+
+Yu T, Thomas G, Yu L et al (2020) MOPO: model-based offline policy optimization. Adv Neural Inf Process Syst 33. https://proceedings.neurips.cc/paper_files/paper/2020/hash/a322852ce0df73e204b7e67cbbef0d0a-Abstract.html
+
+Yu Y et al (2026) How should world models be evaluated for embodied decision-making? A decision-making-centric position. arXiv:2606.15032. https://doi.org/10.48550/arXiv.2606.15032
