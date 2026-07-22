@@ -1,71 +1,59 @@
 # Robot Policy Evidence Contracts
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21481641.svg)](https://doi.org/10.5281/zenodo.21481641)
+Python research code for auditable robot-policy risk analysis, continual adaptation, finite-sample certification, and pre-execution feasibility checks.
 
-Public companion materials for the manuscript **“Evidence Sufficiency for AI-Based Robot Policy Evaluation: From Physics Simulators to Learned World Models.”**
+This repository is the public code distribution extracted from the continual-risk-adaptation project. It contains implementation modules and their unit tests. Manuscripts, review protocols, evidence ledgers, submission figures, private data, checkpoints, results, experiment runners, and execution-authorization files are intentionally excluded.
 
-The project develops a claim–contract–witness framework for assessing what physics simulators, reconstructed digital twins, and learned world models can support when they are used to evaluate, rank, select, optimize, or safety-screen robot policies.
+## Packages
 
-## Repository contents
+- `agc_aerotrace`: deterministic terrain and analytic trace primitives.
+- `agc_basil`: asset validation and static pre-execution feasibility checks.
+- `agc_bastion`: finite-cover certificates and deterministic development models.
+- `agc_continual`: PyTorch continual-adaptation environments and training utilities.
+- `agc_fence`: information-contract auditing with numerical evaluation utilities.
+- `agc_flux`: source/deposition identifiability models and synthetic simulators.
+- `agc_rlrd`: protocol objects, safety-debt metrics, planning, guards, and certificates.
+- `agc_saver`: PyTorch hazard-memory environments and diagnostics.
+- `agc_scope`: deterministic capacity and theory utilities.
 
-- `manuscript.md` — current *Artificial Intelligence Review*-targeted internal manuscript draft;
-- `review_protocol.md` — scope, search, screening, and evidence-coding protocol;
-- `evidence_matrix.md` — claim-relative literature and source ledger;
-- `claim_map.md` — mapping between manuscript claims, contracts, and evidence;
-- `figures/` — conceptual figures in SVG and PNG plus deterministic generation source.
+The code is research software. It is not validated deployment software, a robot-safety certification standard, or evidence of empirical superiority.
 
-## Evidence boundary
+## Installation
 
-This repository contains a structured critical review and theoretical framework. It does not contain new robot experiments, and the framework is not an empirically validated certification standard. The current literature corpus is purposive and remains subject to a targeted update and author-level full-text verification before journal submission.
+Python 3.10 or newer is required.
 
-## Reproducibility
-
-Publication figures use canonical journal file names. `figures/Fig1.eps` through `figures/Fig3.eps` are the vector submission files; matching SVG and PNG versions support inspection and manuscript rendering. Visible figure titles are kept in the manuscript captions rather than duplicated inside the artwork.
-
-The repository now also includes a dependency-free Python reference package:
-
-- `src/robot_policy_evidence_contracts/` provides finite-sample risk bounds, margin-aware ranking certificates, and SHA-256 artifact checks;
-- `tests/` checks fail-closed behavior and certificate logic;
-- `examples/` contains synthetic, non-empirical demonstrations.
-
-Install and verify it with Python 3.10 or newer:
-
-```powershell
+```bash
 python -m pip install -e .
-python -m unittest discover -s tests -v
-python examples/audit_fixed_policy_set.py
 ```
 
-The package contains no robot-training runner, private dataset, checkpoint, P5 empirical output, or execution-authorization manifest. Its numerical checks illustrate selected K1, K5, and K6 obligations. They do not establish target-domain transport, intervention fidelity, protection against adaptive policy generation, or empirical superiority.
+The continual-learning and SAVER modules additionally require PyTorch:
 
-The conceptual figures can be regenerated with Node.js:
-
-```powershell
-node figures/generate_review_figures.js
+```bash
+python -m pip install -e ".[torch]"
 ```
 
-The SVG files are the vector sources; PNG files are review copies.
+For development and tests:
 
-## Authors
+```bash
+python -m pip install -e ".[test,torch]"
+python -m pytest
+```
 
-Yuan Liao, Hui Liu, Jiliang Tu, Jing Jiang, Zaihong Wan, Jianbo Gao, Ting Fang, and Zhiwei Hu — School of Information Engineering, Nanchang Hangkong University, China.
+## Repository layout
 
-## Status
+```text
+src/       Python packages
+tests/     Unit and invariant tests
+```
 
-Internal review release. No journal submission or acceptance is implied.
+## Scientific boundary
 
-## Archival history
+The BASIL package exposes a static feasibility audit; it does not include a runner. The frozen BASIL-v9.4 empirical route remains at `N0_PREEXECUTION_SCIENTIFIC_FAIL_STOP_IMPOSSIBLE_SUPERIORITY_GATE`. Publishing or testing this source code does not authorize replay, N0 execution, threshold changes, pair substitution, or a new empirical run.
 
-- GitHub release: [v0.1.0](https://github.com/yongganzuoziji0818/robot-policy-evidence-contracts/releases/tag/v0.1.0)
-- Version DOI: [10.5281/zenodo.21477786](https://doi.org/10.5281/zenodo.21477786)
-- GitHub release: [v0.2.0](https://github.com/yongganzuoziji0818/robot-policy-evidence-contracts/releases/tag/v0.2.0)
-- Version DOI: [10.5281/zenodo.21481189](https://doi.org/10.5281/zenodo.21481189)
-- GitHub release: [v0.3.0](https://github.com/yongganzuoziji0818/robot-policy-evidence-contracts/releases/tag/v0.3.0)
-- Version DOI: [10.5281/zenodo.21481254](https://doi.org/10.5281/zenodo.21481254)
-- GitHub release: [v0.4.0](https://github.com/yongganzuoziji0818/robot-policy-evidence-contracts/releases/tag/v0.4.0)
-- Version DOI: [10.5281/zenodo.21481641](https://doi.org/10.5281/zenodo.21481641)
-- Concept DOI: [10.5281/zenodo.21477785](https://doi.org/10.5281/zenodo.21477785)
+## Citation
+
+Software citation metadata is provided in [`CITATION.cff`](CITATION.cff). Earlier Zenodo releases archived manuscript-oriented companion materials and should not be interpreted as archives of this corrected code-only tree. A new code-only release should be minted before assigning a software-version DOI.
 
 ## License
 
-The scholarly content and PNG/SVG figures are licensed under [CC BY-NC-ND 4.0](LICENSE-CONTENT.md). The figure-generation code is licensed under the [MIT License](LICENSE-CODE.md). See [LICENSE.md](LICENSE.md) for the exact file allocation and historical-release terms.
+The code in this repository is released under the [MIT License](LICENSE).
